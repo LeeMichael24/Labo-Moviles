@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Laboratorio-01</string>
+    <string name="text_principal_grettings">Bienvenido a</string>
+    <string name="text_bottom_subject">Programación de Dispositivos Móviles</string>
+    <string name="text_bottom_description">bottom_description</string>
+</resources>
