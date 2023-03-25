@@ -1,6 +1,7 @@
 package com.example.laboratorio_02_calc
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -19,7 +20,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var Button_calculate: Button
     private lateinit var Show_Text_Calc:TextView
     private lateinit var sobre_peso:TextView
+    private lateinit var sobre_peso_new:TextView
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,12 +42,25 @@ class MainActivity : AppCompatActivity() {
 
                 if (result < 18.5) {
                     Show_Text_Calc.text = result.toString();
-                    sobre_peso.text = "Healthy"
+                    sobre_peso.setTextColor(Color.RED)
+                    sobre_peso.text = "UnderWeight"
+                    var sobre_peso_New = "You are a bit pass of above weight!"
+                    sobre_peso_new.text = sobre_peso_New.toString()
 
                 }
-                else if (result in 18.5..24.9){
+                else if (result < 24.9){
                     Show_Text_Calc.text = result.toString()
+                    sobre_peso.setTextColor(Color.GREEN)
+                    sobre_peso.text = "In Shape!!"
+                    var sobre_peso_Var = "You are perfect, keep going !!"
+                    sobre_peso_new.text = sobre_peso_Var.toString()
+                }
+                else if (result < 30){
+                    Show_Text_Calc.text = result.toString()
+                    sobre_peso.setTextColor(Color.GREEN)
                     sobre_peso.text = "OverWeight"
+                    var sobre_peso_New = "Upps,It seems you are overweight"
+                    sobre_peso_new.text = sobre_peso_New.toString()
                 }
             }
         }
@@ -57,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         Button_calculate = findViewById(R.id.btn_calculate)
         Show_Text_Calc = findViewById(R.id.text_shown)
         sobre_peso = findViewById(R.id.sobrePesoText)
+        sobre_peso_new = findViewById(R.id.sobPesoText2)
     }
 
     private fun calculateBMI(weight: Float, height: Float): Float {
