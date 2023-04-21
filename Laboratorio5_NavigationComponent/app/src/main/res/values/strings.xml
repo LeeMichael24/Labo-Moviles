@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Laboratorio5_NavigationComponent</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Text_billboard">Billboard</string>
+    <string name="Text_add_new_movie">Add New Movie</string>
+    <string name="Text_harry_potter_y_la_piedra_filosofal">Harry Potter y la Piedra Filosofal</string>
+    <string name="Text_calification">9.5</string>
+    <string name="Text_starwars_episodio_3_la_venganza_de_los_sith">Starwars episodio 3: la venganza de los sith</string>
+</resources>
