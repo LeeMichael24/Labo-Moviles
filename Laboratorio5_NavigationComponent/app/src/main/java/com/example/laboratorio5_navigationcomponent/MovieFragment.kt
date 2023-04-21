@@ -1,4 +1,4 @@
-package com.example.laboratorio05guidos
+package com.example.laboratorio5_navigationcomponent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +14,7 @@ class MovieFragment : Fragment() {
 
     private var param1: String? = null
     private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
