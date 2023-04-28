@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Laboratorio5_NavigationComponent</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Text_billboard">Billboard</string>
+    <string name="Text_add_new_movie">Add New Movie</string>
+    <string name="Text_harry_potter_y_la_piedra_filosofal">Harry Potter y la Piedra Filosofal</string>
+    <string name="Text_calification">9.5</string>
+    <string name="Text_starwars_episodio_3_la_venganza_de_los_sith">Starwars episodio 3: la venganza de los sith</string>
+    <string name="Text_category">Category</string>
+    <string name="Text_description">Description</string>
+    <string name="Text_name">Name</string>
+    <string name="Text_new_movie">New Movie</string>
+    <string name="Text_submit">SUBMIT</string>
+    <string name="star_wars_episodio_3_la_venganza_de_los_sith">Star wars episodio 3: La venganza de los sith</string>
+    <string name="ciencia_ficcion">Ciencia ficcion</string>
+    <string name="_9_8">9.8</string>
+    <string name="anakin_joins_forces_with_obi_wan_and_sets_palpatine_free_from_the_evil_clutches_of_count_doku_however_he_falls_prey_to_palpatine_and_the_jedis_mind_games_and_gives_into_temptation">Anakin joins forces with Obi-Wan and sets Palpatine free from the evil clutches of Count Doku. However, he falls prey to Palpatine and the Jedis\' mind games and gives into temptation.</string>
+</resources>
