@@ -7,19 +7,19 @@ import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Assert
-import retrofit2.converter.gson.GsonConverterFactory
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class LoginTest {
-
     private lateinit var mockWebServer: MockWebServer
     private lateinit var authService: AuthService
 
     @Before
-    fun setup() {
+    fun setUp() {
         mockWebServer = MockWebServer()
+
         authService = Retrofit.Builder()
             .baseUrl(mockWebServer.url("/"))
             .addConverterFactory(GsonConverterFactory.create())
@@ -27,24 +27,38 @@ class LoginTest {
             .create(AuthService::class.java)
     }
 
-
     @Test
-    fun loginTest() = runTest{
+    fun loginTest() = runTest {
         val mockResponse = MockResponse()
-        mockResponse.setBody("""{ "msg": "Login successful", "token": "testToken"}""")
+        mockResponse.setBody("""{"msg": "Login successful", "token": "testToken"}""")
         mockResponse.setResponseCode(200)
         mockWebServer.enqueue(mockResponse)
 
         val response = authService.login(LoginRequest("admin", "admin"))
         mockWebServer.takeRequest()
 
+
         Assert.assertEquals("Login successful", response.message)
         Assert.assertEquals("testToken", response.token)
 
+    }
+
+
+    @Test
+    fun unsuccesfulLogin() = runTest {
+        val mockResponse = MockResponse()
+        mockResponse.setBody("""{"msg": "Check credentials"}""")
+        mockWebServer.enqueue(mockResponse)
+
+        val response = authService.login(LoginRequest("admin", "admin" ))
+        mockWebServer.takeRequest()
+
+        Assert.assertEquals("Check credentials", response.message)
     }
 
     @After
     fun tearDown() {
         mockWebServer.shutdown()
     }
+
 }
